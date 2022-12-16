@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 export const Register = () => {
   return (
     <View>
-        <Text>Home</Text>
+        <Text>Register</Text>
     </View>
   )
 }
