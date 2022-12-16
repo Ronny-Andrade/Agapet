@@ -1,5 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Keyboard,
+  ScrollView,
+  Alert,
+} from 'react-native';
+
 
 export const Home = () => {
   return (

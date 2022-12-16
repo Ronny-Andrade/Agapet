@@ -7,5 +7,5 @@ const COLORS = {
     darkBlue: '#7978B5',
     red: 'red',
   };
-  export default COLORS;
   
+  export default COLORS;
