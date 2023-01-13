@@ -23,7 +23,7 @@ if (PixelRatio.get() <= 2) {
   FONT_BACK_LABEL = 14;
 }
 
-export const Home = () => {
+export const HistorialPet = () => {
     return (
         <View style={style.fondo}>
             <View style={style.backgroundContainer}>
