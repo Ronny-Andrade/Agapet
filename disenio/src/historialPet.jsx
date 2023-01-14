@@ -27,10 +27,10 @@ export const HistorialPet = () => {
     return (
         <View style={style.fondo}>
             <View style={style.backgroundContainer}>
-            <View style={style.fondo5}>
-                <Text style={style.titulo}>Historial de Chester</Text>
-            </View>
-                
+                <View style={style.fondo5}>
+                    <Text style={style.titulo}>Historial de Chester</Text>
+                </View>
+
                 <View style={style.fondo3}>
                     <View style={style.contenedorCaract}>
                         <View style={style.caracte}>
@@ -41,11 +41,11 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte2}>
-                                <Text style={{ fontWeight: "bold", fontSize:width*0.035,margin: '1%'}}> No olvidar</Text>
-                                <Text style={{  fontSize:width*0.03,margin: '1%'}}> Vacuna de la rabia</Text>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
                             </View>
                             <View style={style.iconCaracte3}>
-                                <Text style={{ fontWeight: "bold", color: "orange", fontSize:width*0.03}}> 01/01/2023</Text>
+                                <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
                             </View>
                         </View>
 
@@ -64,12 +64,19 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                                <Text style={{ fontWeight: "bold", fontSize:width*0.035,margin: '1%' }}> Desparacitado</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%' }}> Fecha: 01/01/2023</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%' }}> Lugar: Clínica Pet</Text>
+                                <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Esterelizado</Text>
+                                    <View style={{justifyContent: 'center'}}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/check.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize:width*0.03 }}> Ver más</Text>
+                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
                             </View>
                         </View>
 
@@ -84,12 +91,19 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                                <Text style={{ fontWeight: "bold", fontSize:width*0.035,margin: '1%' }}> Desparacitado</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%'  }}> Fecha: 01/01/2023</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%'  }}> Lugar: Clínica Pet</Text>
+                            <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Desparacitado</Text>
+                                    <View style={{justifyContent: 'center'}}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/check.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize:width*0.03 }}> Ver más</Text>
+                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
                             </View>
                         </View>
 
@@ -107,12 +121,19 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                                <Text style={{ fontWeight: "bold", fontSize:width*0.035,margin: '1%' }}> Desparacitado</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%' }}> Fecha: 01/01/2023</Text>
-                                <Text style={{fontSize:width*0.03,margin: '1%'}}> Lugar: Clínica Pet</Text>
+                            <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Sextuple</Text>
+                                    <View style={{justifyContent: 'center'}}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/check.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize:width*0.03 }}> Ver más</Text>
+                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
                             </View>
                         </View>
 
@@ -127,12 +148,19 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                                <Text style={{ fontWeight: "bold", fontSize:width*0.035,margin: '1%'}}> Desparacitado</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%' }}> Fecha: 01/01/2023</Text>
-                                <Text style={{ fontSize:width*0.03,margin: '1%' }}> Lugar: Clínica Pet</Text>
+                            <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Rabia</Text>
+                                    <View style={{justifyContent: 'center'}}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/nocheck.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize:width*0.03 }}> Ver más</Text>
+                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
                             </View>
                         </View>
 
@@ -154,13 +182,13 @@ const style = StyleSheet.create({
     titulo: {
         color: 'black',
         fontWeight: 'bold',
-        fontSize:width*0.07,
+        fontSize: width * 0.07,
         marginTop: '6%'
     },
     titulo2: {
         color: 'black',
         fontWeight: 'bold',
-        fontSize:width*0.04,
+        fontSize: width * 0.04,
         marginTop: '6%'
     },
     estadoMascota: {
@@ -188,10 +216,10 @@ const style = StyleSheet.create({
     },
     fondo3: {
         position: 'relative',
-        width: width*0.85,
-        height: width*0.15,
+        width: width * 0.85,
+        height: width * 0.15,
         elevation: 5,
-        marginTop:'3%',
+        marginTop: '3%',
         backgroundColor: 'white',
         borderRadius: 15,
         shadowColor: '#000',
@@ -201,10 +229,10 @@ const style = StyleSheet.create({
     },
     fondo4: {
         position: 'relative',
-        width: width*0.85,
-        height: width*0.35,
+        width: width * 0.85,
+        height: width * 0.35,
         elevation: 5,
-        marginTop:'10%',
+        marginTop: '10%',
         backgroundColor: 'white',
         borderRadius: 15,
         shadowColor: '#000',
@@ -217,10 +245,10 @@ const style = StyleSheet.create({
     },
     fondo6: {
         position: 'relative',
-        width: width*0.85,
-        height: width*0.35,
+        width: width * 0.85,
+        height: width * 0.35,
         elevation: 5,
-        marginTop:'5%',
+        marginTop: '5%',
         backgroundColor: 'white',
         borderRadius: 15,
         shadowColor: '#000',
@@ -230,10 +258,10 @@ const style = StyleSheet.create({
     },
     contenedorCaract: {
         flexDirection: 'row',
-        margin:'3%',
-        
+        margin: '3%',
+
     },
-    
+
     image: {
         width: 400,
         height: 400,
@@ -306,7 +334,7 @@ const style = StyleSheet.create({
         marginBottom: '5%',
     },
     backgroundContainer: {
-       
+
         bottom: 0,
         left: 0,
         right: 0
@@ -333,33 +361,33 @@ const style = StyleSheet.create({
         left: 260,
     },
     caracte: {
-        width: width*0.35,
-        height: width*0.10,
-        borderRadius: width*0.25,
+        width: width * 0.35,
+        height: width * 0.10,
+        borderRadius: width * 0.25,
         flexDirection: "row"
     },
     iconCaracte: {
-        width: width*0.10,
+        width: width * 0.10,
         backgroundColor: 'red',
-        borderRadius: width*0.25,
+        borderRadius: width * 0.25,
         alignItems: 'center',
         justifyContent: 'center'
-        
+
     },
     iconCaracte4: {
         backgroundColor: '#5FAFB9',
-        width: width*0.10,
-        borderRadius: width*0.25,
+        width: width * 0.10,
+        borderRadius: width * 0.25,
         alignItems: 'center',
         justifyContent: 'center',
-        top:'20%'
+        top: '20%'
     },
     iconCaracte2: {
         width: '90%',
         height: '50%',
         alignItems: 'left',
-        marginLeft:'4%'
-        
+        marginLeft: '4%'
+
     },
     iconCaracte3: {
         width: '100%',
@@ -370,19 +398,19 @@ const style = StyleSheet.create({
         width: '90%',
         height: '50%',
         alignItems: 'left',
-        marginLeft:'2%'
-        
+        marginLeft: '2%'
+
     },
     iconCaracte6: {
         width: '100%',
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        top:'45%'
+        top: '45%'
     },
     imgIcon2: {
         padding: 10,
-        height: width*0.07,
-        width: width*0.07,
+        height: width * 0.07,
+        width: width * 0.07,
         resizeMode: 'stretch'
     },
     imgIcon3: {
@@ -390,5 +418,19 @@ const style = StyleSheet.create({
         height: 40,
         width: 40,
         resizeMode: 'stretch'
+    },
+    imgIcon4: {
+        height: width * 0.03,
+        width: width * 0.03,
+        resizeMode: 'stretch'
+    },
+    iconCaracte7: {
+        backgroundColor: 'green',
+        width: width * 0.05,
+        borderRadius: width * 0.1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        top: '20%'
     }
 });
+
