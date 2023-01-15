@@ -15,21 +15,18 @@ import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
 
-const {height,width}= Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
-var FONT_BACK_LABEL   = 18;
+var FONT_BACK_LABEL = 18;
 
 if (PixelRatio.get() <= 2) {
-  FONT_BACK_LABEL = 14;
+    FONT_BACK_LABEL = 14;
 }
 
-export const HistorialPet = () => {
+export const Home = () => {
     return (
         <View style={style.fondo}>
             <View style={style.backgroundContainer}>
-                <View style={style.fondo5}>
-                    <Text style={style.titulo}>Historial de Chester</Text>
-                </View>
 
                 <View style={style.fondo3}>
                     <View style={style.contenedorCaract}>
@@ -37,23 +34,35 @@ export const HistorialPet = () => {
                             <View style={style.iconCaracte}>
                                 <Image style={style.imgIcon2}
 
-                                    source={require('../assets/alerta.png')}
+                                    source={require('../assets/fotomascota.jpg')}
                                 />
                             </View>
                             <View style={style.iconCaracte2}>
-                                <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
-                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.04, margin: '1%', color: 'white' }}> ¡Hola Chester!</Text>
+                                <View style={{ flexDirection: "row", marginLeft: '2%', marginTop: '2%' }}>
+                                    <Image style={style.imgIcon5}
+
+                                        source={require('../assets/coin.png')}
+                                    />
+                                    <Text style={{ fontSize: width * 0.03, marginTop: '2%', marginBottom: '2%', color: 'yellow' }}> 100 puntos</Text>
+                                </View>
                             </View>
                             <View style={style.iconCaracte3}>
-                                <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
+                                <Image style={style.imgIcon6}
+
+                                    source={require('../assets/notificacion.png')}
+                                />
                             </View>
                         </View>
 
                     </View>
-
-
-
                 </View>
+
+                <View style={style.fondo5}>
+                    <Text style={style.titulo}>Historial de Chester</Text>
+                </View>
+
+
                 <View style={style.fondo4}>
                     <View style={style.contenedorCaract}>
                         <View style={style.caracte}>
@@ -66,7 +75,7 @@ export const HistorialPet = () => {
                             <View style={style.iconCaracte5}>
                                 <View style={{ flexDirection: "row" }}>
                                     <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Esterelizado</Text>
-                                    <View style={{justifyContent: 'center'}}>
+                                    <View style={{ justifyContent: 'center' }}>
                                         <Image style={style.imgIcon4}
                                             source={require('../assets/check.png')}
                                         />
@@ -91,9 +100,13 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
-                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Desparacitado</Text>
-                                    <View style={{justifyContent: 'center'}}>
+                                <View style={{ flexDirection: "row" }}>
+                                    <View style={{ justifyContent: 'center' }}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/formulario-de-consentimiento-del-donante.png')}
+                                        />
+                                    </View>
+                                    <View style={{ justifyContent: 'center' }}>
                                         <Image style={style.imgIcon4}
                                             source={require('../assets/check.png')}
                                         />
@@ -110,63 +123,7 @@ export const HistorialPet = () => {
                     </View>
 
                 </View>
-                <Text style={style.titulo2}> Vacunas</Text>
-                <View style={style.fondo6}>
-                    <View style={style.contenedorCaract}>
-                        <View style={style.caracte}>
-                            <View style={style.iconCaracte4}>
-                                <Image style={style.imgIcon2}
-
-                                    source={require('../assets/vacuna.png')}
-                                />
-                            </View>
-                            <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
-                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Sextuple</Text>
-                                    <View style={{justifyContent: 'center'}}>
-                                        <Image style={style.imgIcon4}
-                                            source={require('../assets/check.png')}
-                                        />
-                                    </View>
-                                </View>
-                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
-                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
-                            </View>
-                            <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
-                            </View>
-                        </View>
-
-                    </View>
-
-                    <View style={style.contenedorCaract}>
-                        <View style={style.caracte}>
-                            <View style={style.iconCaracte4}>
-                                <Image style={style.imgIcon2}
-
-                                    source={require('../assets/vacuna.png')}
-                                />
-                            </View>
-                            <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
-                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Rabia</Text>
-                                    <View style={{justifyContent: 'center'}}>
-                                        <Image style={style.imgIcon4}
-                                            source={require('../assets/nocheck.png')}
-                                        />
-                                    </View>
-                                </View>
-                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
-                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
-                            </View>
-                            <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
-                            </View>
-                        </View>
-
-                    </View>
-
-                </View>
+                
             </View>
         </View>
     );
@@ -202,8 +159,8 @@ const style = StyleSheet.create({
     },
     fondo: {
         backgroundColor: 'white',
-        alignItems: 'center',
-        height:height
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     fondo2: {
         backgroundColor: '#fff',
@@ -216,16 +173,16 @@ const style = StyleSheet.create({
     },
     fondo3: {
         position: 'relative',
-        width: width * 0.85,
-        height: width * 0.15,
-        elevation: 5,
-        marginTop: '3%',
-        backgroundColor: 'white',
-        borderRadius: 15,
+        width: width,
+        height: width * 0.2,
+        elevation: 10,
+        backgroundColor: '#5FAFB9',
+        borderBottomLeftRadius: 25,
+        borderBottomRightRadius: 25,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 0.3,
-        shadowRadius: 5
+        shadowOpacity: 1,
+        shadowRadius: 10
     },
     fondo4: {
         position: 'relative',
@@ -367,9 +324,14 @@ const style = StyleSheet.create({
         flexDirection: "row"
     },
     iconCaracte: {
-        width: width * 0.10,
+        //width: width * 0.10,
+        //height: width * 0.15,
+        width: width * 0.15,
+        borderRadius: width * 0.5,
         backgroundColor: 'red',
-        borderRadius: width * 0.25,
+        marginTop: '8%',
+        //borderRadius: width * 0.25,
+        marginLeft:'10%',
         alignItems: 'center',
         justifyContent: 'center'
 
@@ -408,10 +370,10 @@ const style = StyleSheet.create({
         top: '45%'
     },
     imgIcon2: {
-        padding: 10,
-        height: width * 0.07,
-        width: width * 0.07,
-        resizeMode: 'stretch'
+
+        height: width * 0.15,
+        width: width * 0.15,
+        borderRadius: width * 0.5
     },
     imgIcon3: {
         padding: 10,
@@ -431,6 +393,15 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         top: '20%'
-    }
-});
+    },
+    imgIcon5: {
+        height: width * 0.05,
+        width: width * 0.05,
+        alignSelf: 'flex-end'
+    },
+    imgIcon6: {
 
+        height: width * 0.08,
+        width: width * 0.08
+        }
+});
