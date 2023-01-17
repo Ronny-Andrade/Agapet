@@ -70,13 +70,12 @@ export class BottomNotification extends React.Component {
                     backgroundColor: 'white',
                     borderRadius: 20,
                     paddingHorizontal: 10,
-                    height: deviceHeight * 0.12,
                     alignSelf: 'center',
                     margin:'3%'
 
                 }}>
-                <View style={{ margin: '1%' }}>
-                    <View style={{ flexDirection: "row", margin: '2%' }}>
+                <View style={{ margin: '1%', height:width*0.2 }}>
+                    <View style={{ flexDirection: "row", margin: '1%' }}>
                         <Image style={style.imgIcon7}
                             source={require('../assets/notificacion2.png')}
                         />

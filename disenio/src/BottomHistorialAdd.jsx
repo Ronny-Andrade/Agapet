@@ -14,7 +14,7 @@ import {
 const deviceHeight = Dimensions.get('window').height
 const width = Dimensions.get('window').width
 
-export class BottomPopup extends React.Component {
+export class BottomHistorialAdd extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -65,6 +65,8 @@ export class BottomPopup extends React.Component {
         const { title } = this.props
         const { src } = this.props
         return (
+
+
             <View
                 style={{
                     width: '90%',
@@ -75,30 +77,21 @@ export class BottomPopup extends React.Component {
 
                 }}>
                 <View style={{ margin: '5%' }}>
-                    <View style={{ flexDirection: "row", margin: '2%' }}>
-                        <Image style={style.imgIcon7}
-                            source={src}
-                        />
-                        <View style={{ margin: '1%' }}>
-                            <Text style={{ color: 'black', fontWeight: "bold", fontSize: width * 0.05, marginBottom: '1%' }}> {title}</Text>
-                            <Text style={{ color: 'green', fontSize: width * 0.035, marginBottom: '1%' }}> {estado}</Text>
+                    <View style={style.caracte}>
+                        <View style={style.iconCaracte}>
+                            <Image style={style.imgIcon2}
+
+                                source={require('../assets/alerta.png')}
+                            />
                         </View>
-
+                        <View style={style.iconCaracte2}>
+                            <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
+                            <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
+                        </View>
+                        <View style={style.iconCaracte3}>
+                            <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
+                        </View>
                     </View>
-                    <Text style={{ fontSize: width * 0.035, margin: '4%' }}>En esta fase,
-                        un voluntario de la fundación se pondrá en contacto con usted para coordinar una reunión presencial.</Text>
-                    <FlatList
-                        ahowaVerticalScrollIndicator={false}
-                        data={data}
-                        renderItem={this.rednerItem}
-                        extraData={data}
-                        keyExtractor={(item, index) => index.toString()}
-
-                        //ItemSeparatorComponent={this.renderSeparator}
-                        contentContainerStyle={{
-                            paddingBottom: 0
-                        }}
-                    />
                 </View>
             </View>
         )
@@ -152,7 +145,7 @@ export class BottomPopup extends React.Component {
                     {this.renderOutsideTouchable(onTouchOutside)}
                     <View style={{
                         width: '100%',
-                        backgroundColor: '#5FAFB9',
+                        height:'100%',
                         borderTopRightRadius: 10,
                         borderTopLeftRadius: 10,
                         paddingHorizontal: 10,
@@ -174,5 +167,42 @@ const style = StyleSheet.create({
         height: width * 0.15,
         width: width * 0.15,
         resizeMode: 'contain'
+    },
+    contenedorCaract: {
+        flexDirection: 'row',
+        margin: '3%',
+
+    },
+    caracte: {
+        width: width * 0.35,
+        height: width * 0.10,
+        borderRadius: width * 0.25,
+        flexDirection: "row"
+    },
+    iconCaracte: {
+        width: width * 0.10,
+        backgroundColor: 'red',
+        borderRadius: width * 0.25,
+        alignItems: 'center',
+        justifyContent: 'center'
+
+    },
+    imgIcon2: {
+        padding: 10,
+        height: width * 0.07,
+        width: width * 0.07,
+        resizeMode: 'stretch'
+    },
+    iconCaracte2: {
+        width: '90%',
+        height: '50%',
+        alignItems: 'left',
+        marginLeft: '4%'
+
+    },
+    iconCaracte3: {
+        width: '100%',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end'
     }
 });

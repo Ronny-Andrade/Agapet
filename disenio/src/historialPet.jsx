@@ -6,24 +6,60 @@ import {
     TouchableOpacity,
     View,
     StyleSheet,
-    Keyboard,
+    TouchableWithoutFeedback,
     Image,
     Dimensions,
-    PixelRatio
+    PixelRatio,
+    StatusBar,
+    SafeAreaView
 } from 'react-native';
 import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
+import { BottomHistorial } from './BottomHistorial'
+import { BottomHistorialAdd } from './BottomHistorialAdd'
 
-const {height,width}= Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
-var FONT_BACK_LABEL   = 18;
+var FONT_BACK_LABEL = 18;
+const popupList = [
+    {
+        id: 1,
+        name: 'Task'
+    },
+    {
+        id: 2,
+        name: 'Message'
+    },
+    {
+        id: 3,
+        name: 'Note'
+    }
+]
 
 if (PixelRatio.get() <= 2) {
-  FONT_BACK_LABEL = 14;
+    FONT_BACK_LABEL = 14;
 }
 
 export const HistorialPet = () => {
+
+
+    let popupRef = React.createRef()
+    const onShowPopup = () => {
+        popupRef.show()
+    }
+    const onClosePopup = () => {
+        popupRef.close()
+    }
+
+    let popupRef2 = React.createRef()
+    const onShowPopup2 = () => {
+        popupRef.show()
+    }
+    const onClosePopup2 = () => {
+        popupRef.close()
+    }
+
     return (
         <View style={style.fondo}>
             <View style={style.backgroundContainer}>
@@ -32,25 +68,38 @@ export const HistorialPet = () => {
                 </View>
 
                 <View style={style.fondo3}>
-                    <View style={style.contenedorCaract}>
-                        <View style={style.caracte}>
-                            <View style={style.iconCaracte}>
-                                <Image style={style.imgIcon2}
 
-                                    source={require('../assets/alerta.png')}
-                                />
-                            </View>
-                            <View style={style.iconCaracte2}>
-                                <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
-                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
-                            </View>
-                            <View style={style.iconCaracte3}>
-                                <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
-                            </View>
-                        </View>
+                    <StatusBar barStyle='dark-content'></StatusBar>
+                    <SafeAreaView >
+                        <TouchableWithoutFeedback onPress={onShowPopup}>
 
-                    </View>
+                            <View style={style.contenedorCaract}>
+                                <View style={style.caracte}>
+                                    <View style={style.iconCaracte}>
+                                        <Image style={style.imgIcon2}
 
+                                            source={require('../assets/alerta.png')}
+                                        />
+                                    </View>
+                                    <View style={style.iconCaracte2}>
+                                        <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
+                                        <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
+                                    </View>
+                                    <View style={style.iconCaracte3}>
+                                        <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
+                                    </View>
+                                </View>
+
+                            </View>
+                        </TouchableWithoutFeedback>
+                    </SafeAreaView>
+                    <BottomHistorialAdd
+                        title='Chester'
+                        estado='Adoptado'
+                        ref={(target) => popupRef = target}
+                        onTouchOutside={onClosePopup}
+                        data={popupList}
+                    />
 
 
                 </View>
@@ -66,7 +115,7 @@ export const HistorialPet = () => {
                             <View style={style.iconCaracte5}>
                                 <View style={{ flexDirection: "row" }}>
                                     <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Esterelizado</Text>
-                                    <View style={{justifyContent: 'center'}}>
+                                    <View style={{ justifyContent: 'center' }}>
                                         <Image style={style.imgIcon4}
                                             source={require('../assets/check.png')}
                                         />
@@ -91,9 +140,9 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
+                                <View style={{ flexDirection: "row" }}>
                                     <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Desparacitado</Text>
-                                    <View style={{justifyContent: 'center'}}>
+                                    <View style={{ justifyContent: 'center' }}>
                                         <Image style={style.imgIcon4}
                                             source={require('../assets/check.png')}
                                         />
@@ -121,9 +170,9 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
+                                <View style={{ flexDirection: "row" }}>
                                     <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Sextuple</Text>
-                                    <View style={{justifyContent: 'center'}}>
+                                    <View style={{ justifyContent: 'center' }}>
                                         <Image style={style.imgIcon4}
                                             source={require('../assets/check.png')}
                                         />
@@ -133,7 +182,21 @@ export const HistorialPet = () => {
                                 <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup2}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Chester'
+                                    estado='Adoptado'
+                                    ref={(target) => popupRef2 = target}
+                                    onTouchOutside={onClosePopup2}
+                                    data={popupList}
+                                />
+
                             </View>
                         </View>
 
@@ -148,9 +211,9 @@ export const HistorialPet = () => {
                                 />
                             </View>
                             <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
+                                <View style={{ flexDirection: "row" }}>
                                     <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Rabia</Text>
-                                    <View style={{justifyContent: 'center'}}>
+                                    <View style={{ justifyContent: 'center' }}>
                                         <Image style={style.imgIcon4}
                                             source={require('../assets/nocheck.png')}
                                         />
@@ -203,7 +266,7 @@ const style = StyleSheet.create({
     fondo: {
         backgroundColor: 'white',
         alignItems: 'center',
-        height:height
+        height: height
     },
     fondo2: {
         backgroundColor: '#fff',
@@ -433,4 +496,6 @@ const style = StyleSheet.create({
         top: '20%'
     }
 });
+
+
 

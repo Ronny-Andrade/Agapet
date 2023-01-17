@@ -21,6 +21,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Bu
 import { StackScreenProps } from '@react-navigation/stack';
 import { BottomPopup } from './BottomPopup'
 import { BottomNotification } from './BottomNotification'
+import { BottomPet } from './BottomPet'
+
+
 const popupList = [
     {
         id: 1,
@@ -44,7 +47,9 @@ if (PixelRatio.get() <= 2) {
     FONT_BACK_LABEL = 14;
 }
 
+
 export const Home = () => {
+
 
     let popupRef = React.createRef()
     const onShowPopup = () => {
@@ -102,6 +107,14 @@ export const Home = () => {
         popupRef7.close()
     }
 
+    let popupRef8 = React.createRef()
+    const onShowPopup8 = () => {
+        popupRef8.show()
+    }
+    const onClosePopup8 = () => {
+        popupRef8.close()
+    }
+
 
 
 
@@ -112,10 +125,24 @@ export const Home = () => {
                 <View style={style.contenedorCaract}>
                     <View style={style.caracte}>
                         <View style={style.iconCaracte}>
-                            <Image style={style.imgIcon2}
+                            <StatusBar barStyle='dark-content'></StatusBar>
+                            <SafeAreaView >
+                                <TouchableWithoutFeedback onPress={onShowPopup8}>
 
-                                source={require('../assets/fotomascota.jpg')}
+                                    <Image style={style.imgIcon2}
+
+                                        source={require('../assets/fotomascota.jpg')}
+                                    />
+                                </TouchableWithoutFeedback>
+                            </SafeAreaView>
+                            <BottomPet
+                                title='Chester'
+                                estado='Adoptado'
+                                ref={(target) => popupRef8 = target}
+                                onTouchOutside={onClosePopup8}
+                                data={popupList}
                             />
+
                         </View>
                         <View style={style.iconCaracte2}>
                             <Text style={{ fontWeight: "bold", fontSize: width * 0.04, margin: '1%', color: 'white' }}> ¡Hola Chester!</Text>
@@ -186,6 +213,7 @@ export const Home = () => {
                             <BottomPopup
                                 title='Entrega de mascota'
                                 estado='No iniciado'
+                                src={require('../assets/gatito.png')}
                                 ref={(target) => popupRef6 = target}
                                 onTouchOutside={onClosePopup6}
                                 data={popupList}
@@ -221,6 +249,7 @@ export const Home = () => {
                             <BottomPopup
                                 title='Firma de contrato'
                                 estado='No iniciado'
+                                src={require('../assets/acuerdo.png')}
                                 ref={(target) => popupRef5 = target}
                                 onTouchOutside={onClosePopup5}
                                 data={popupList}
@@ -258,6 +287,7 @@ export const Home = () => {
                             <BottomPopup
                                 title='Segunda Visita'
                                 estado='En espera'
+                                src={require('../assets/casa.png')}
                                 ref={(target) => popupRef4 = target}
                                 onTouchOutside={onClosePopup4}
                                 data={popupList}
@@ -295,6 +325,7 @@ export const Home = () => {
                                 title='Entrevista'
                                 estado='Aprobado'
                                 ref={(target) => popupRef3 = target}
+                                src={require('../assets/conversacion.png')}
                                 onTouchOutside={onClosePopup3}
                                 data={popupList}
                             />
@@ -331,6 +362,7 @@ export const Home = () => {
                             <BottomPopup
                                 title='Primera Visita'
                                 estado='Aprobado'
+                                src={require('../assets/casa.png')}
                                 ref={(target) => popupRef2 = target}
                                 onTouchOutside={onClosePopup2}
                                 data={popupList}
@@ -365,6 +397,7 @@ export const Home = () => {
                             <BottomPopup
                                 title='Formulario'
                                 estado='Aprobado'
+                                src={require('../assets/formulario-de-consentimiento-del-donante.png')}
                                 ref={(target) => popupRef = target}
                                 onTouchOutside={onClosePopup}
                                 data={popupList}
@@ -615,19 +648,19 @@ const style = StyleSheet.create({
     iconCaracte5d: {
         width: '90%',
         margin: '9%',
-        paddingLeft:'9%'
+        paddingLeft: '9%'
 
     },
     iconCaracte5i: {
         width: '90%',
         margin: '9%',
-        paddingLeft:'36%'
+        paddingLeft: '36%'
 
     },
     iconCaracte5i2: {
         width: '90%',
         margin: '9%',
-        paddingLeft:'25%'
+        paddingLeft: '25%'
 
     },
     iconCaracte6: {

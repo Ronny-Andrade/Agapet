@@ -14,7 +14,7 @@ import {
 const deviceHeight = Dimensions.get('window').height
 const width = Dimensions.get('window').width
 
-export class BottomPopup extends React.Component {
+export class BottomHistorial extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -65,6 +65,8 @@ export class BottomPopup extends React.Component {
         const { title } = this.props
         const { src } = this.props
         return (
+
+
             <View
                 style={{
                     width: '90%',
@@ -148,7 +150,7 @@ export class BottomPopup extends React.Component {
                 visible={show}
                 onRequestClose={this.close}
             >
-                <View style={{ flex: 1, backgroundColor: '#000000AA', justifyContent: 'flex-end', height: '50%' }}>
+                 <View style={{ flex: 1, backgroundColor: '#000000AA', justifyContent: 'flex-end', height: '50%' }}>
                     {this.renderOutsideTouchable(onTouchOutside)}
                     <View style={{
                         width: '100%',
@@ -174,5 +176,42 @@ const style = StyleSheet.create({
         height: width * 0.15,
         width: width * 0.15,
         resizeMode: 'contain'
+    },
+    contenedorCaract: {
+        flexDirection: 'row',
+        margin: '3%',
+
+    },
+    caracte: {
+        width: width * 0.35,
+        height: width * 0.10,
+        borderRadius: width * 0.25,
+        flexDirection: "row"
+    },
+    iconCaracte: {
+        width: width * 0.10,
+        backgroundColor: 'red',
+        borderRadius: width * 0.25,
+        alignItems: 'center',
+        justifyContent: 'center'
+
+    },
+    imgIcon2: {
+        padding: 10,
+        height: width * 0.07,
+        width: width * 0.07,
+        resizeMode: 'stretch'
+    },
+    iconCaracte2: {
+        width: '90%',
+        height: '50%',
+        alignItems: 'left',
+        marginLeft: '4%'
+
+    },
+    iconCaracte3: {
+        width: '100%',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end'
     }
 });
