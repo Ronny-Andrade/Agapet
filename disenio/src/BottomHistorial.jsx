@@ -91,7 +91,7 @@ export class BottomHistorial extends React.Component {
         const { estado } = this.props
         const { title } = this.props
         const { src } = this.props
-        const { verficado } = this.props
+        const { verificado } = this.props
         return (
             <View style={style.fondo6}>
                 <View style={style.contenedorCaract}>
@@ -107,7 +107,7 @@ export class BottomHistorial extends React.Component {
                                 <Text style={{ fontWeight: "bold", fontSize: width * 0.04}}> {title}</Text>
                                 <View style={{ justifyContent: 'center' }}>
                                     <Image style={style.imgIcon4}
-                                        source={verficado}
+                                        source={verificado}
                                     />
                                 </View>
                             </View>
@@ -192,7 +192,7 @@ export class BottomHistorial extends React.Component {
 
     render() {
         let { show } = this.state
-        let { onTouchOutside, title, estado, verificado } = this.props
+        let { onTouchOutside, title, estado, verificado,src } = this.props
         return (
             <Modal
                 animationType={"fade"}

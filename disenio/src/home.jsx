@@ -6,24 +6,22 @@ import {
     TouchableOpacity,
     View,
     StyleSheet,
-    Keyboard,
+    TouchableWithoutFeedback,
     Image,
     Dimensions,
     PixelRatio,
-    ScrollView,
-    SafeAreaView,
     StatusBar,
-    TouchableWithoutFeedback,
-    ImageBackground
+    SafeAreaView
 } from 'react-native';
-//import Stars from 'react-native-stars';
+import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
-import { BottomPopup } from './BottomPopup'
-import { BottomNotification } from './BottomNotification'
-import { BottomPet } from './BottomPet'
+import { BottomHistorial } from './BottomHistorial'
+import { BottomHistorialAdd } from './BottomHistorialAdd'
 
+const { height, width } = Dimensions.get('window');
 
+var FONT_BACK_LABEL = 18;
 const popupList = [
     {
         id: 1,
@@ -39,15 +37,12 @@ const popupList = [
     }
 ]
 
-const { height, width } = Dimensions.get('window');
-
-var FONT_BACK_LABEL = 18;
-
 if (PixelRatio.get() <= 2) {
     FONT_BACK_LABEL = 14;
 }
 
 export const Home = () => {
+
 
     let popupRef = React.createRef()
     const onShowPopup = () => {
@@ -97,313 +92,269 @@ export const Home = () => {
         popupRef6.close()
     }
 
-    let popupRef7 = React.createRef()
-    const onShowPopup7 = () => {
-        popupRef7.show()
-    }
-    const onClosePopup7 = () => {
-        popupRef7.close()
-    }
-
-    let popupRef8 = React.createRef()
-    const onShowPopup8 = () => {
-        popupRef8.show()
-    }
-    const onClosePopup8 = () => {
-        popupRef8.close()
-    }
-
-
-
-
     return (
         <View style={style.fondo}>
+            <View style={style.backgroundContainer}>
+                <View style={style.fondo5}>
+                    <Text style={style.titulo}>Historial de Chester</Text>
+                </View>
 
-            <View style={style.fondo3}>
-                <View style={style.contenedorCaract}>
-                    <View style={style.caracte}>
-                        <View style={style.iconCaracte}>
-                        <Image style={style.imgIcon2}
+                <View style={style.fondo3}>
 
-source={require('../assets/fotomascota.jpg')}
-/>
+                    <StatusBar barStyle='dark-content'></StatusBar>
+                    <SafeAreaView >
+                        <TouchableWithoutFeedback onPress={onShowPopup}>
 
-                        </View>
-                        <View style={style.iconCaracte2}>
-                            <Text style={{ fontWeight: "bold", fontSize: width * 0.045, color: 'white' }}> ¡Hola Chester!</Text>
-                            <View style={{ flexDirection: "row", marginLeft: '2%', marginTop: '2%' }}>
-                                <Image style={style.imgIcon5}
+                            <View style={style.contenedorCaract}>
+                                <View style={style.caracte}>
+                                    <View style={style.iconCaracte}>
+                                        <Image style={style.imgIcon2}
 
-                                    source={require('../assets/coin.png')}
+                                            source={require('../assets/alerta.png')}
+                                        />
+                                    </View>
+                                    <View style={style.iconCaracte2}>
+                                        <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
+                                        <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la sextuple</Text>
+                                    </View>
+                                    <View style={style.iconCaracte3}>
+                                        <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
+                                    </View>
+                                </View>
+
+                            </View>
+                        </TouchableWithoutFeedback>
+                    </SafeAreaView>
+                    <BottomHistorialAdd
+                        title='Vacuna de la sextuple'
+                        estado='Adoptado'
+                        src={require('../assets/vacuna.png')}
+                        ref={(target) => popupRef = target}
+                        onTouchOutside={onClosePopup}
+                        data={popupList}
+                    />
+
+
+                </View>
+
+                <View style={style.fondo3}>
+
+                    <StatusBar barStyle='dark-content'></StatusBar>
+                    <SafeAreaView >
+                        <TouchableWithoutFeedback onPress={onShowPopup3}>
+
+                            <View style={style.contenedorCaract}>
+                                <View style={style.caracte}>
+                                    <View style={style.iconCaracte}>
+                                        <Image style={style.imgIcon2}
+
+                                            source={require('../assets/alerta.png')}
+                                        />
+                                    </View>
+                                    <View style={style.iconCaracte2}>
+                                        <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
+                                        <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
+                                    </View>
+                                    <View style={style.iconCaracte3}>
+                                        <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
+                                    </View>
+                                </View>
+
+                            </View>
+                        </TouchableWithoutFeedback>
+                    </SafeAreaView>
+                    <BottomHistorialAdd
+                        title='Vacuna de la rabia'
+                        estado='Adoptado'
+                        src={require('../assets/vacuna.png')}
+                        
+                        ref={(target) => popupRef3 = target}
+                        onTouchOutside={onClosePopup3}
+                        data={popupList}
+                    />
+
+
+                </View>
+                
+                <View style={style.fondo4}>
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2}
+
+                                    source={require('../assets/tijeras.png')}
                                 />
-                                <Text style={{ fontSize: width * 0.03, marginTop: '2%', marginBottom: '2%', color: 'yellow' }}> 100 puntos</Text>
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Esterelizado</Text>
+                                    <View style={{ justifyContent: 'center' }}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/check.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
+                            </View>
+                            <View style={style.iconCaracte6}>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup6}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Desparacitado'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/check.png')}
+                                    src={require('../assets/tijeras.png')}
+                                    ref={(target) => popupRef6 = target}
+                                    onTouchOutside={onClosePopup6}
+                                    data={popupList}
+                                />
+
                             </View>
                         </View>
-                        <View style={style.iconCaracte3}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup7}>
 
-                                    <Image style={style.imgIcon6}
+                    </View>
 
-                                        source={require('../assets/notificacion.png')}
-                                    />
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2}
 
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomNotification
-                                title='¡Felicitaciones!'
-                                estado='No iniciado'
-                                ref={(target) => popupRef7 = target}
-                                onTouchOutside={onClosePopup7}
-                                data={popupList}
-                            />
+                                    source={require('../assets/medicina.png')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Desparacitado</Text>
+                                    <View style={{ justifyContent: 'center' }}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/check.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
+                            </View>
+                            <View style={style.iconCaracte6}>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup5}>
 
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Desparacitado'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/check.png')}
+                                    src={require('../assets/medicina.png')}
+                                    ref={(target) => popupRef5 = target}
+                                    onTouchOutside={onClosePopup5}
+                                    data={popupList}
+                                />
+
+                            </View>
                         </View>
+
+                    </View>
+
+                </View>
+                <Text style={style.titulo2}> Vacunas</Text>
+                <View style={style.fondo6}>
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2}
+
+                                    source={require('../assets/vacuna.png')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Sextuple</Text>
+                                    <View style={{ justifyContent: 'center' }}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/check.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
+                            </View>
+                            <View style={style.iconCaracte6}>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup2}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Sextuple'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/check.png')}
+                                    src={require('../assets/vacuna.png')}
+                                    ref={(target) => popupRef2 = target}
+                                    onTouchOutside={onClosePopup2}
+                                    data={popupList}
+                                />
+
+                            </View>
+                        </View>
+
+                    </View>
+
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2}
+
+                                    source={require('../assets/vacuna.png')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <View style={{ flexDirection: "row" }}>
+                                    <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> Rabia</Text>
+                                    <View style={{ justifyContent: 'center' }}>
+                                        <Image style={style.imgIcon4}
+                                            source={require('../assets/nocheck.png')}
+                                        />
+                                    </View>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Fecha: 01/01/2023</Text>
+                                <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
+                            </View>
+                            <View style={style.iconCaracte6}>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup4}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Rabia'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/nocheck.png')}
+                                    src={require('../assets/vacuna.png')}
+                                    ref={(target) => popupRef4 = target}
+                                    onTouchOutside={onClosePopup4}
+                                    data={popupList}
+                                />
+
+                            </View>
+                        </View>
+
                     </View>
 
                 </View>
             </View>
-
-            <ScrollView style={style.scrollStyle} >
-                <ImageBackground style={style.imgFondo} source={require('../assets/caminofase4aceptado.png')} >
-                    <View style={{ width: '100%', marginTop: '6%' }}>
-                        <View style={style.iconCaracte5d}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup6}>
-
-                                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
-
-                                        <View style={{ justifyContent: 'center' }}>
-                                            <Image style={style.imgIcon7}
-                                                source={require('../assets/perro.png')}
-                                            />
-                                        </View>
-                                        <Icon
-                                            size={width * 0.05}
-                                            name='arrow-left-bold'
-                                            color='grey' />
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Seguimiento</Text>
-
-                                        <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.1 }}>
-                                            <Image style={style.imgIcon4}
-                                                source={{/*require('../assets/check.png')*/ }}
-                                            />
-                                        </View>
-                                    </View>
-
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPopup
-                                title='Seguimiento'
-                                estado='No iniciado'
-                                src={require('../assets/perro.png')}
-                                ref={(target) => popupRef6 = target}
-                                onTouchOutside={onClosePopup6}
-                                data={popupList}
-                            />
-                        </View>
-
-
-                        <View style={style.iconCaracte5i22}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup5}>
-
-                                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Entrega de mascota</Text>
-                                        <Icon
-                                            size={width * 0.05}
-                                            name='arrow-right-bold'
-                                            color='grey' />
-                                        <View style={{ justifyContent: 'center' }}>
-                                            <Image style={style.imgIcon7}
-                                                source={require('../assets/gatito.png')}
-                                            />
-                                        </View>
-                                        <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
-                                            <Image style={style.imgIcon4}
-                                                source={{/*require('../assets/check.png')*/ }}
-                                            />
-                                        </View>
-                                    </View>
-
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPopup
-                                title='Entrega de mascota'
-                                estado='No iniciado'
-                                src={require('../assets/gatito.png')}
-                                ref={(target) => popupRef5 = target}
-                                onTouchOutside={onClosePopup5}
-                                data={popupList}
-                            />
-                        </View>
-
-
-                        <View style={style.iconCaracte5d}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup4}>
-
-                                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
-
-                                        <View style={{ justifyContent: 'center' }}>
-                                            <Image style={style.imgIcon7Actual}
-                                                source={require('../assets/acuerdo.png')}
-                                            />
-                                        </View>
-                                        <Icon
-                                            size={width * 0.05}
-                                            name='arrow-left-bold'
-                                            color='gold' />
-                                        <Text style={{ color: 'gold', fontWeight: "bold", fontSize: width * 0.035, marginBottom: '1%' }}> Firma de contrato</Text>
-
-                                        <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.1 }}>
-                                            <Image style={style.imgIconActual}
-                                                source={{/*require('../assets/check.png')*/ }}
-                                            />
-                                        </View>
-                                    </View>
-
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPopup
-                                title='Firma de contrato'
-                                estado='En espera'
-                                src={require('../assets/acuerdo.png')}
-                                ref={(target) => popupRef4 = target}
-                                onTouchOutside={onClosePopup4}
-                                data={popupList}
-                            />
-                        </View>
-
-
-
-                        <View style={style.iconCaracte5i2}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup3}>
-
-                                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Visita a domicilio</Text>
-                                        <Icon
-                                            size={width * 0.05}
-                                            name='arrow-right-bold'
-                                            color='grey' />
-                                        <View style={{ justifyContent: 'center' }}>
-                                            <Image style={style.imgIcon7}
-                                                source={require('../assets/casa.png')}
-                                            />
-                                        </View>
-                                        <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.23 }}>
-                                            <Image style={style.imgIcon4}
-                                                source={require('../assets/check.png')}
-                                            />
-                                        </View>
-                                    </View>
-
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPopup
-                                title='Visita a domicilio'
-                                estado='Aprobado'
-                                ref={(target) => popupRef3 = target}
-                                src={require('../assets/casa.png')}
-                                onTouchOutside={onClosePopup3}
-                                data={popupList}
-                            />
-                        </View>
-
-
-                        <View style={style.iconCaracte5d}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup2}>
-
-                                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
-
-                                        <View style={{ justifyContent: 'center' }}>
-                                            <Image style={style.imgIcon7}
-                                                source={require('../assets/chat.png')}
-                                            />
-                                        </View>
-                                        <Icon
-                                            size={width * 0.05}
-                                            name='arrow-left-bold'
-                                            color='grey' />
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Entrevista WhatsApp</Text>
-
-                                        <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.1 }}>
-                                            <Image style={style.imgIcon4}
-                                                source={require('../assets/check.png')}
-                                            />
-                                        </View>
-                                    </View>
-
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPopup
-                                title='Entrevista WhatsApp'
-                                estado='Aprobado'
-                                src={require('../assets/chat.png')}
-                                ref={(target) => popupRef2 = target}
-                                onTouchOutside={onClosePopup2}
-                                data={popupList}
-                            />
-                        </View>
-
-                        <View style={style.iconCaracte5i}>
-
-                            <SafeAreaView style={style.container2}>
-                                <TouchableWithoutFeedback onPress={onShowPopup}>
-
-                                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Formulario</Text>
-                                        <Icon
-                                            size={width * 0.05}
-                                            name='arrow-right-bold'
-                                            color='grey' />
-                                        <View style={{ justifyContent: 'center' }}>
-                                            <Image style={style.imgIcon7}
-                                                source={require('../assets/formulario-de-consentimiento-del-donante.png')}
-                                            />
-                                        </View>
-                                        <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.23 }}>
-                                            <Image style={style.imgIcon4}
-                                                source={require('../assets/check.png')}
-                                            />
-                                        </View>
-                                    </View>
-
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPopup
-                                title='Formulario'
-                                estado='Aprobado'
-                                src={require('../assets/formulario-de-consentimiento-del-donante.png')}
-                                ref={(target) => popupRef = target}
-                                onTouchOutside={onClosePopup}
-                                data={popupList}
-                            />
-                        </View>
-
-
-
-
-                    </View>
-
-                </ImageBackground>
-                <View style={{ height:height*0.15}}>
-
-                </View>
-
-            </ScrollView>
-
         </View>
-
-
     );
 }
 
@@ -436,8 +387,9 @@ const style = StyleSheet.create({
         margin: 5
     },
     fondo: {
-        backgroundColor: 'white'
-
+        backgroundColor: 'white',
+        alignItems: 'center',
+        height: height
     },
     fondo2: {
         backgroundColor: '#fff',
@@ -449,16 +401,17 @@ const style = StyleSheet.create({
         top: -170
     },
     fondo3: {
-        width: width,
-        height: width * 0.2,
-        elevation: 10,
-        backgroundColor: '#5FAFB9',
-        borderBottomLeftRadius: 25,
-        borderBottomRightRadius: 25,
+        position: 'relative',
+        width: width * 0.85,
+        height: width * 0.15,
+        elevation: 5,
+        marginTop: '3%',
+        backgroundColor: 'white',
+        borderRadius: 15,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 1,
-        shadowRadius: 10
+        shadowOpacity: 0.3,
+        shadowRadius: 5
     },
     fondo4: {
         position: 'relative',
@@ -491,7 +444,7 @@ const style = StyleSheet.create({
     },
     contenedorCaract: {
         flexDirection: 'row',
-        margin: '3%'
+        margin: '3%',
 
     },
 
@@ -567,7 +520,7 @@ const style = StyleSheet.create({
         marginBottom: '5%',
     },
     backgroundContainer: {
-        alignItems: 'center',
+
         bottom: 0,
         left: 0,
         right: 0
@@ -600,14 +553,9 @@ const style = StyleSheet.create({
         flexDirection: "row"
     },
     iconCaracte: {
-        //width: width * 0.10,
-        //height: width * 0.15,
-        width: width * 0.15,
-        borderRadius: width * 0.5,
+        width: width * 0.10,
         backgroundColor: 'red',
-        marginTop: '8%',
-        //borderRadius: width * 0.25,
-        marginLeft: '10%',
+        borderRadius: width * 0.25,
         alignItems: 'center',
         justifyContent: 'center'
 
@@ -618,55 +566,38 @@ const style = StyleSheet.create({
         borderRadius: width * 0.25,
         alignItems: 'center',
         justifyContent: 'center',
-        top: '20%'
+        top: '5%'
     },
     iconCaracte2: {
-        height: '90%',
+        width: '90%',
+        height: '50%',
         //alignItems: 'left',
         marginLeft: '4%'
 
     },
     iconCaracte3: {
         width: '100%',
-        //justifyContent: 'flex-end',
-        //alignItems: 'flex-end',
-        paddingLeft: '70%'
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end'
     },
-    iconCaracte5d: {
+    iconCaracte5: {
         width: '90%',
-        margin: '9%',
-        paddingLeft: '9%'
-
-    },
-    iconCaracte5i: {
-        width: '90%',
-        margin: '9%',
-        paddingLeft: '36%'
-
-    },
-    iconCaracte5i2: {
-        width: '90%',
-        margin: '9%',
-        paddingLeft: '25%'
-
-    },
-    iconCaracte5i22: {
-        width: '90%',
-        margin: '9%',
-        paddingLeft: '20%'
+        height: '50%',
+        //alignItems: 'left',
+        marginLeft: '2%'
 
     },
     iconCaracte6: {
         width: '100%',
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        top: '45%'
+        top: '12%'
     },
     imgIcon2: {
-
-        height: width * 0.15,
-        width: width * 0.15,
-        borderRadius: width * 0.5
+        padding: 10,
+        height: width * 0.07,
+        width: width * 0.07,
+        resizeMode: 'stretch'
     },
     imgIcon3: {
         padding: 10,
@@ -675,14 +606,8 @@ const style = StyleSheet.create({
         resizeMode: 'stretch'
     },
     imgIcon4: {
-        height: width * 0.06,
-        width: width * 0.06,
-        resizeMode: 'stretch',
-        opacity: 0.9
-    },
-    imgIconActual: {
-        height: width * 0.06,
-        width: width * 0.06,
+        height: width * 0.03,
+        width: width * 0.03,
         resizeMode: 'stretch'
     },
     iconCaracte7: {
@@ -692,47 +617,8 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         top: '20%'
-    },
-    imgIcon5: {
-        height: width * 0.05,
-        width: width * 0.05,
-        alignSelf: 'flex-end'
-    },
-    imgIcon6: {
-
-        height: width * 0.11,
-        width: width * 0.11
-    },
-    imgIcon7: {
-        height: width * 0.15,
-        width: width * 0.15,
-        resizeMode: 'contain',
-        opacity: 0.6
-    },
-    imgIcon7Actual: {
-        height: width * 0.15,
-        width: width * 0.15,
-        resizeMode: 'contain'
-    },
-    scrollStyle: {
-        width: width,
-        height: height * 0.9
-
-    },
-    imgFondo: {
-        marginTop: '3%',
-        width: width,
-        height:height
-    },
-    container2: {
-        width: '90%'
-        //height: '50%'
-    },
-    txtSize: {
-        fontSize: 20
     }
-
-
 });
 
-export default Home;
+
+

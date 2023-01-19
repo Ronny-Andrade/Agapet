@@ -239,7 +239,7 @@ const style = StyleSheet.create({
 
     },
     caracte: {
-        width: width * 0.5,
+        //width: width * 0.5,
         height: width * 0.10,
         flexDirection: "row"
     },
@@ -279,7 +279,6 @@ const style = StyleSheet.create({
         top: '5%'
     },
     iconCaracte5: {
-        width: '90%',
         //height: '50%',
         //alignItems: 'left',
         //marginLeft: '2%',

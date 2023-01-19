@@ -54,10 +54,42 @@ export const HistorialPet = () => {
 
     let popupRef2 = React.createRef()
     const onShowPopup2 = () => {
-        popupRef.show()
+        popupRef2.show()
     }
     const onClosePopup2 = () => {
-        popupRef.close()
+        popupRef2.close()
+    }
+
+    let popupRef3 = React.createRef()
+    const onShowPopup3 = () => {
+        popupRef3.show()
+    }
+    const onClosePopup3 = () => {
+        popupRef3.close()
+    }
+
+    let popupRef4 = React.createRef()
+    const onShowPopup4 = () => {
+        popupRef4.show()
+    }
+    const onClosePopup4 = () => {
+        popupRef4.close()
+    }
+
+    let popupRef5 = React.createRef()
+    const onShowPopup5 = () => {
+        popupRef5.show()
+    }
+    const onClosePopup5 = () => {
+        popupRef5.close()
+    }
+
+    let popupRef6 = React.createRef()
+    const onShowPopup6 = () => {
+        popupRef6.show()
+    }
+    const onClosePopup6 = () => {
+        popupRef6.close()
     }
 
     return (
@@ -83,6 +115,44 @@ export const HistorialPet = () => {
                                     </View>
                                     <View style={style.iconCaracte2}>
                                         <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
+                                        <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la sextuple</Text>
+                                    </View>
+                                    <View style={style.iconCaracte3}>
+                                        <Text style={{ fontWeight: "bold", color: "orange", fontSize: width * 0.03 }}> 01/01/2023</Text>
+                                    </View>
+                                </View>
+
+                            </View>
+                        </TouchableWithoutFeedback>
+                    </SafeAreaView>
+                    <BottomHistorialAdd
+                        title='Vacuna de la sextuple'
+                        estado='Adoptado'
+                        src={require('../assets/vacuna.png')}
+                        ref={(target) => popupRef = target}
+                        onTouchOutside={onClosePopup}
+                        data={popupList}
+                    />
+
+
+                </View>
+
+                <View style={style.fondo3}>
+
+                    <StatusBar barStyle='dark-content'></StatusBar>
+                    <SafeAreaView >
+                        <TouchableWithoutFeedback onPress={onShowPopup3}>
+
+                            <View style={style.contenedorCaract}>
+                                <View style={style.caracte}>
+                                    <View style={style.iconCaracte}>
+                                        <Image style={style.imgIcon2}
+
+                                            source={require('../assets/alerta.png')}
+                                        />
+                                    </View>
+                                    <View style={style.iconCaracte2}>
+                                        <Text style={{ fontWeight: "bold", fontSize: width * 0.035, margin: '1%' }}> No olvidar</Text>
                                         <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Vacuna de la rabia</Text>
                                     </View>
                                     <View style={style.iconCaracte3}>
@@ -94,15 +164,18 @@ export const HistorialPet = () => {
                         </TouchableWithoutFeedback>
                     </SafeAreaView>
                     <BottomHistorialAdd
-                        title='Chester'
+                        title='Vacuna de la rabia'
                         estado='Adoptado'
-                        ref={(target) => popupRef = target}
-                        onTouchOutside={onClosePopup}
+                        src={require('../assets/vacuna.png')}
+                        
+                        ref={(target) => popupRef3 = target}
+                        onTouchOutside={onClosePopup3}
                         data={popupList}
                     />
 
 
                 </View>
+                
                 <View style={style.fondo4}>
                     <View style={style.contenedorCaract}>
                         <View style={style.caracte}>
@@ -125,7 +198,23 @@ export const HistorialPet = () => {
                                 <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup6}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Desparacitado'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/check.png')}
+                                    src={require('../assets/tijeras.png')}
+                                    ref={(target) => popupRef6 = target}
+                                    onTouchOutside={onClosePopup6}
+                                    data={popupList}
+                                />
+
                             </View>
                         </View>
 
@@ -152,7 +241,23 @@ export const HistorialPet = () => {
                                 <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup5}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Desparacitado'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/check.png')}
+                                    src={require('../assets/medicina.png')}
+                                    ref={(target) => popupRef5 = target}
+                                    onTouchOutside={onClosePopup5}
+                                    data={popupList}
+                                />
+
                             </View>
                         </View>
 
@@ -190,8 +295,10 @@ export const HistorialPet = () => {
                                     </TouchableWithoutFeedback>
                                 </SafeAreaView>
                                 <BottomHistorial
-                                    title='Chester'
+                                    title='Sextuple'
                                     estado='Adoptado'
+                                    verificado={require('../assets/check.png')}
+                                    src={require('../assets/vacuna.png')}
                                     ref={(target) => popupRef2 = target}
                                     onTouchOutside={onClosePopup2}
                                     data={popupList}
@@ -223,7 +330,23 @@ export const HistorialPet = () => {
                                 <Text style={{ fontSize: width * 0.03, margin: '1%' }}> Lugar: Clínica Pet</Text>
                             </View>
                             <View style={style.iconCaracte6}>
-                                <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                <StatusBar barStyle='dark-content'></StatusBar>
+                                <SafeAreaView >
+                                    <TouchableWithoutFeedback onPress={onShowPopup4}>
+
+                                        <Text style={{ fontWeight: "bold", color: "blue", fontSize: width * 0.03 }}> Ver más</Text>
+                                    </TouchableWithoutFeedback>
+                                </SafeAreaView>
+                                <BottomHistorial
+                                    title='Rabia'
+                                    estado='Adoptado'
+                                    verificado={require('../assets/nocheck.png')}
+                                    src={require('../assets/vacuna.png')}
+                                    ref={(target) => popupRef4 = target}
+                                    onTouchOutside={onClosePopup4}
+                                    data={popupList}
+                                />
+
                             </View>
                         </View>
 
@@ -443,7 +566,7 @@ const style = StyleSheet.create({
         borderRadius: width * 0.25,
         alignItems: 'center',
         justifyContent: 'center',
-        top: '20%'
+        top: '5%'
     },
     iconCaracte2: {
         width: '90%',
@@ -468,7 +591,7 @@ const style = StyleSheet.create({
         width: '100%',
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        top: '45%'
+        top: '12%'
     },
     imgIcon2: {
         padding: 10,
