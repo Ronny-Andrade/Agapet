@@ -16,7 +16,7 @@ import {
     TouchableWithoutFeedback,
     ImageBackground
 } from 'react-native';
-import Stars from 'react-native-stars';
+//import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
 import { BottomPopup } from './BottomPopup'
@@ -123,27 +123,14 @@ export const TimeLine = () => {
                 <View style={style.contenedorCaract}>
                     <View style={style.caracte}>
                         <View style={style.iconCaracte}>
-                            <StatusBar barStyle='dark-content'></StatusBar>
-                            <SafeAreaView >
-                                <TouchableWithoutFeedback onPress={onShowPopup8}>
+                        <Image style={style.imgIcon2}
 
-                                    <Image style={style.imgIcon2}
-
-                                        source={require('../assets/fotomascota.jpg')}
-                                    />
-                                </TouchableWithoutFeedback>
-                            </SafeAreaView>
-                            <BottomPet
-                                title='Chester'
-                                estado='Adoptado'
-                                ref={(target) => popupRef8 = target}
-                                onTouchOutside={onClosePopup8}
-                                data={popupList}
-                            />
+source={require('../assets/fotomascota.jpg')}
+/>
 
                         </View>
                         <View style={style.iconCaracte2}>
-                            <Text style={{ fontWeight: "bold", fontSize: width * 0.04, margin: '1%', color: 'white' }}> ¡Hola Chester!</Text>
+                            <Text style={{ fontWeight: "bold", fontSize: width * 0.045, color: 'white' }}> ¡Hola Chester!</Text>
                             <View style={{ flexDirection: "row", marginLeft: '2%', marginTop: '2%' }}>
                                 <Image style={style.imgIcon5}
 
@@ -180,7 +167,7 @@ export const TimeLine = () => {
 
             <ScrollView style={style.scrollStyle} >
                 <ImageBackground style={style.imgFondo} source={require('../assets/caminofase4aceptado.png')} >
-                    <View style={{ width: '100%', marginTop: '10%' }}>
+                    <View style={{ width: '100%', marginTop: '6%' }}>
                         <View style={style.iconCaracte5d}>
                             <StatusBar barStyle='dark-content'></StatusBar>
                             <SafeAreaView style={style.container2}>
@@ -190,14 +177,14 @@ export const TimeLine = () => {
 
                                         <View style={{ justifyContent: 'center' }}>
                                             <Image style={style.imgIcon7}
-                                                source={require('../assets/gatito.png')}
+                                                source={require('../assets/perro.png')}
                                             />
                                         </View>
                                         <Icon
                                             size={width * 0.05}
                                             name='arrow-left-bold'
                                             color='grey' />
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Entrega de mascota</Text>
+                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Seguimiento</Text>
 
                                         <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.1 }}>
                                             <Image style={style.imgIcon4}
@@ -209,9 +196,9 @@ export const TimeLine = () => {
                                 </TouchableWithoutFeedback>
                             </SafeAreaView>
                             <BottomPopup
-                                title='Entrega de mascota'
+                                title='Seguimiento'
                                 estado='No iniciado'
-                                src={require('../assets/gatito.png')}
+                                src={require('../assets/perro.png')}
                                 ref={(target) => popupRef6 = target}
                                 onTouchOutside={onClosePopup6}
                                 data={popupList}
@@ -219,20 +206,20 @@ export const TimeLine = () => {
                         </View>
 
 
-                        <View style={style.iconCaracte5i2}>
+                        <View style={style.iconCaracte5i22}>
                             <StatusBar barStyle='dark-content'></StatusBar>
                             <SafeAreaView style={style.container2}>
                                 <TouchableWithoutFeedback onPress={onShowPopup5}>
 
                                     <View style={{ flexDirection: "row", alignItems: 'center' }}>
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Firma de contrato</Text>
+                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Entrega de mascota</Text>
                                         <Icon
                                             size={width * 0.05}
                                             name='arrow-right-bold'
                                             color='grey' />
                                         <View style={{ justifyContent: 'center' }}>
                                             <Image style={style.imgIcon7}
-                                                source={require('../assets/acuerdo.png')}
+                                                source={require('../assets/gatito.png')}
                                             />
                                         </View>
                                         <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
@@ -245,9 +232,9 @@ export const TimeLine = () => {
                                 </TouchableWithoutFeedback>
                             </SafeAreaView>
                             <BottomPopup
-                                title='Firma de contrato'
+                                title='Entrega de mascota'
                                 estado='No iniciado'
-                                src={require('../assets/acuerdo.png')}
+                                src={require('../assets/gatito.png')}
                                 ref={(target) => popupRef5 = target}
                                 onTouchOutside={onClosePopup5}
                                 data={popupList}
@@ -264,14 +251,14 @@ export const TimeLine = () => {
 
                                         <View style={{ justifyContent: 'center' }}>
                                             <Image style={style.imgIcon7Actual}
-                                                source={require('../assets/casa.png')}
+                                                source={require('../assets/acuerdo.png')}
                                             />
                                         </View>
                                         <Icon
                                             size={width * 0.05}
                                             name='arrow-left-bold'
                                             color='gold' />
-                                        <Text style={{ color: 'gold', fontWeight: "bold", fontSize: width * 0.035, marginBottom: '1%' }}> Segunda Visita</Text>
+                                        <Text style={{ color: 'gold', fontWeight: "bold", fontSize: width * 0.035, marginBottom: '1%' }}> Firma de contrato</Text>
 
                                         <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.1 }}>
                                             <Image style={style.imgIconActual}
@@ -283,9 +270,9 @@ export const TimeLine = () => {
                                 </TouchableWithoutFeedback>
                             </SafeAreaView>
                             <BottomPopup
-                                title='Segunda Visita'
+                                title='Firma de contrato'
                                 estado='En espera'
-                                src={require('../assets/casa.png')}
+                                src={require('../assets/acuerdo.png')}
                                 ref={(target) => popupRef4 = target}
                                 onTouchOutside={onClosePopup4}
                                 data={popupList}
@@ -294,20 +281,20 @@ export const TimeLine = () => {
 
 
 
-                        <View style={style.iconCaracte5i}>
+                        <View style={style.iconCaracte5i2}>
                             <StatusBar barStyle='dark-content'></StatusBar>
                             <SafeAreaView style={style.container2}>
                                 <TouchableWithoutFeedback onPress={onShowPopup3}>
 
                                     <View style={{ flexDirection: "row", alignItems: 'center' }}>
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Entrevista</Text>
+                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Visita a domicilio</Text>
                                         <Icon
                                             size={width * 0.05}
                                             name='arrow-right-bold'
                                             color='grey' />
                                         <View style={{ justifyContent: 'center' }}>
                                             <Image style={style.imgIcon7}
-                                                source={require('../assets/conversacion.png')}
+                                                source={require('../assets/casa.png')}
                                             />
                                         </View>
                                         <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.23 }}>
@@ -320,10 +307,10 @@ export const TimeLine = () => {
                                 </TouchableWithoutFeedback>
                             </SafeAreaView>
                             <BottomPopup
-                                title='Entrevista'
+                                title='Visita a domicilio'
                                 estado='Aprobado'
                                 ref={(target) => popupRef3 = target}
-                                src={require('../assets/conversacion.png')}
+                                src={require('../assets/casa.png')}
                                 onTouchOutside={onClosePopup3}
                                 data={popupList}
                             />
@@ -339,14 +326,14 @@ export const TimeLine = () => {
 
                                         <View style={{ justifyContent: 'center' }}>
                                             <Image style={style.imgIcon7}
-                                                source={require('../assets/casa.png')}
+                                                source={require('../assets/chat.png')}
                                             />
                                         </View>
                                         <Icon
                                             size={width * 0.05}
                                             name='arrow-left-bold'
                                             color='grey' />
-                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Primera Visita</Text>
+                                        <Text style={{ color: 'grey', fontSize: width * 0.035, marginBottom: '1%' }}> Entrevista WhatsApp</Text>
 
                                         <View style={{ position: 'absolute', alignSelf: 'flex-end', paddingLeft: width * 0.1 }}>
                                             <Image style={style.imgIcon4}
@@ -358,9 +345,9 @@ export const TimeLine = () => {
                                 </TouchableWithoutFeedback>
                             </SafeAreaView>
                             <BottomPopup
-                                title='Primera Visita'
+                                title='Entrevista WhatsApp'
                                 estado='Aprobado'
-                                src={require('../assets/casa.png')}
+                                src={require('../assets/chat.png')}
                                 ref={(target) => popupRef2 = target}
                                 onTouchOutside={onClosePopup2}
                                 data={popupList}
@@ -408,6 +395,9 @@ export const TimeLine = () => {
                     </View>
 
                 </ImageBackground>
+                <View style={{ height:height*0.15}}>
+
+                </View>
 
             </ScrollView>
 
@@ -631,8 +621,7 @@ const style = StyleSheet.create({
         top: '20%'
     },
     iconCaracte2: {
-        width: '90%',
-        height: '50%',
+        height: '90%',
         //alignItems: 'left',
         marginLeft: '4%'
 
@@ -661,6 +650,12 @@ const style = StyleSheet.create({
         paddingLeft: '25%'
 
     },
+    iconCaracte5i22: {
+        width: '90%',
+        margin: '9%',
+        paddingLeft: '20%'
+
+    },
     iconCaracte6: {
         width: '100%',
         justifyContent: 'flex-end',
@@ -683,7 +678,7 @@ const style = StyleSheet.create({
         height: width * 0.06,
         width: width * 0.06,
         resizeMode: 'stretch',
-        opacity: '90%'
+        opacity: 0.9
     },
     imgIconActual: {
         height: width * 0.06,
@@ -712,7 +707,7 @@ const style = StyleSheet.create({
         height: width * 0.15,
         width: width * 0.15,
         resizeMode: 'contain',
-        opacity: '60%'
+        opacity: 0.6
     },
     imgIcon7Actual: {
         height: width * 0.15,
@@ -726,11 +721,12 @@ const style = StyleSheet.create({
     },
     imgFondo: {
         marginTop: '3%',
-        width: width
+        width: width,
+        height:height
     },
     container2: {
-        width: '90%',
-        height: '50%'
+        width: '90%'
+        //height: '50%'
     },
     txtSize: {
         fontSize: 20

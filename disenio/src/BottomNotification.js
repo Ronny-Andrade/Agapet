@@ -138,7 +138,7 @@ export class BottomNotification extends React.Component {
                 visible={show}
                 onRequestClose={this.close}
             >
-                <View style={{ position: '', flex: 1, backgroundColor: '#000000AA', justifyContent: 'flex-end', height: '50%' }}>
+                <View style={{flex: 1, backgroundColor: '#000000AA', justifyContent: 'flex-end', height: '50%' }}>
 
 
                     {/*this.renderTitle()*/}

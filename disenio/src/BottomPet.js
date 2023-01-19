@@ -12,7 +12,7 @@ import {
 
 } from 'react-native'
 
-const deviceHeight = Dimensions.get('window').height
+//const deviceHeight = Dimensions.get('window').height
 const width = Dimensions.get('window').width
 
 export class BottomPet extends React.Component {
@@ -96,7 +96,7 @@ export class BottomPet extends React.Component {
                         marginLeft: '3%',
                         marginRight:'3%',
                         margin:'5%',
-                        opacity:'50%'
+                        opacity: 0.5
                     }}>
                     <View style={{ backgroundColor:'#DF9F51',borderRadius: 20, height: width * 0.18, width: width * 0.18, alignItems:'center', justifyContent:'center'}}>
                             <Image style={style.imgIcon7}
@@ -158,7 +158,7 @@ export class BottomPet extends React.Component {
                 visible={show}
                 onRequestClose={this.close}
             >
-                <View style={{ position: '', flex: 1, backgroundColor: '#000000AA', justifyContent: 'flex-end', height: '50%' }}>
+                <View style={{  flex: 1, backgroundColor: '#000000AA', justifyContent: 'flex-end', height: '50%' }}>
 
 
                     {/*this.renderTitle()*/}
