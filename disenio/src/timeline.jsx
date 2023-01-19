@@ -633,7 +633,7 @@ const style = StyleSheet.create({
     iconCaracte2: {
         width: '90%',
         height: '50%',
-        alignItems: 'left',
+        //alignItems: 'left',
         marginLeft: '4%'
 
     },

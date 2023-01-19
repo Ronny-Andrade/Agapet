@@ -12,8 +12,7 @@ import {
     SafeAreaView
 
 } from 'react-native'
-import { BottomImagen } from './BottomImagen'
-
+import { BottomNotification } from './BottomNotification'
 
 const deviceHeight = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -40,7 +39,7 @@ const popupList = [
     }
 ]
 
-export class BottomHistorial extends React.Component {
+export class BottomImagen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -93,66 +92,12 @@ export class BottomHistorial extends React.Component {
         const { src } = this.props
         const { verficado } = this.props
         return (
-            <View style={style.fondo6}>
-                <View style={style.contenedorCaract}>
-                    <View style={style.caracte}>
-                        <View style={style.iconCaracte4}>
-                            <Image style={style.imgIcon2}
-
-                                source={src}
-                            />
-                        </View>
-                        <View style={style.iconCaracte5}>
-                            <View style={{ flexDirection: "row" }}>
-                                <Text style={{ fontWeight: "bold", fontSize: width * 0.04}}> {title}</Text>
-                                <View style={{ justifyContent: 'center' }}>
-                                    <Image style={style.imgIcon4}
-                                        source={verficado}
-                                    />
-                                </View>
-                            </View>
-                            <View style={{ marginTop:'5%' }}>
-                            <Text style={{ fontSize: width * 0.035}}> Fecha: 01/01/2023</Text>
-                            <Text style={{ fontSize: width * 0.035 }}> Lugar: Clínica Pet</Text>
-                            </View>
-                            
-                        </View>
-                    </View>
-                </View>
-                <View style={{ marginTop: '10%', marginLeft: '2%', marginRight: '2%', justifyContent: 'flex-start', alignSelf: 'flex-start' }}>
+            <Image style={style.imgIcon2}
+                source={ src }
+            />
+            
 
 
-                    <Text style={{ fontSize: width * 0.035 }}> Esterelizado en la Clínica Pet el día 1 de noviembre de 2022 en Guayaquil.</Text>
-
-
-
-                </View>
-                <View style={{ margin: '5%' }}>
-
-                <StatusBar barStyle='dark-content'></StatusBar>
-                <SafeAreaView >
-                    <TouchableWithoutFeedback onPress={onShowPopup7}>
-
-                        <View style={style.iconCaracte7}>
-                            <Image style={style.imgIcon2}
-
-                                source={require('../assets/camara-fotografica.png')}
-                            />
-                        </View>
-
-                    </TouchableWithoutFeedback>
-                </SafeAreaView>
-                <BottomImagen
-                    title='¡Felicitaciones!'
-                    estado='No iniciado'
-                    src={require('../assets/fotousuario.jpg')}
-                    ref={(target) => popupRef7 = target}
-                    onTouchOutside={onClosePopup7}
-                    data={popupList}
-                />
-                </View>
-
-            </View>
         )
     }
 
@@ -257,10 +202,9 @@ const style = StyleSheet.create({
 
     },
     imgIcon2: {
-        padding: 10,
-        height: width * 0.09,
-        width: width * 0.09,
-        resizeMode: 'stretch'
+        height: width,
+        width: width,
+        resizeMode: 'contain'
     },
     iconCaracte2: {
         width: '90%',
@@ -281,11 +225,11 @@ const style = StyleSheet.create({
         borderRadius: width * 0.30,
         alignItems: 'center',
         justifyContent: 'center',
-        top: '5%'
+        top: '20%'
     },
     iconCaracte5: {
-        //width: '90%',
-        //height: '50%',
+        width: '90%',
+        height: '50%',
         //alignItems: 'left',
         marginLeft: '2%'
 
@@ -303,7 +247,7 @@ const style = StyleSheet.create({
         borderRadius: width * 0.03,
         alignItems: 'center',
         justifyContent: 'center',
-        alignSelf:'flex-end'
+        alignSelf: 'flex-end'
     },
     imgIcon4: {
         height: width * 0.03,
@@ -311,7 +255,7 @@ const style = StyleSheet.create({
         resizeMode: 'stretch'
     },
     fondo6: {
-        
+
         elevation: 5,
         marginTop: '5%',
         backgroundColor: 'white',
