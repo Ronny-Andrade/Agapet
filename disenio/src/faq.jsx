@@ -16,7 +16,7 @@ import Searchbar from './Searchbar.js'
 const { height, width } = Dimensions.get('window');
 
 
-export const Home = () => {
+export const Faq = () => {
 
     const [value, setValue] = useState()
     function updateSearch(value) {

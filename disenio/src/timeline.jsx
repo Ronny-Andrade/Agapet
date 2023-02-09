@@ -123,10 +123,10 @@ export const TimeLine = () => {
                 <View style={style.contenedorCaract}>
                     <View style={style.caracte}>
                         <View style={style.iconCaracte}>
-                        <Image style={style.imgIcon2}
+                            <Image style={style.imgIcon2}
 
-source={require('../assets/fotomascota.jpg')}
-/>
+                                source={require('../assets/fotomascota.jpg')}
+                            />
 
                         </View>
                         <View style={style.iconCaracte2}>
@@ -395,7 +395,7 @@ source={require('../assets/fotomascota.jpg')}
                     </View>
 
                 </ImageBackground>
-                <View style={{ height:height*0.15}}>
+                <View style={{ height: height * 0.15 }}>
 
                 </View>
 
@@ -722,7 +722,7 @@ const style = StyleSheet.create({
     imgFondo: {
         marginTop: '3%',
         width: width,
-        height:height
+        height: height
     },
     container2: {
         width: '90%'
