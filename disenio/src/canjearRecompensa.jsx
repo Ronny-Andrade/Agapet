@@ -19,8 +19,9 @@ import {
 //import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
-import { BottomRecompensa } from './BottomRecompensa'
+import { BottomPopup } from './BottomPopup'
 import { BottomNotification } from './BottomNotification'
+import Searchbar from './Searchbar.js'
 
 
 const popupList = [
@@ -46,7 +47,7 @@ if (PixelRatio.get() <= 2) {
     FONT_BACK_LABEL = 14;
 }
 
-export const Home = () => {
+export const CanjearRecompensa = () => {
 
 
     let popupRef7 = React.createRef()
@@ -60,14 +61,7 @@ export const Home = () => {
 
 
 
-    let popupRef = React.createRef()
-    const onShowPopup = () => {
-        popupRef.show()
-    }
-    const onClosePopup = () => {
-        popupRef.close()
-    }
-
+    
 
     return (
         <View style={style.fondo}>
@@ -131,18 +125,10 @@ export const Home = () => {
             </Text>
 
             <View style={style.boton}>
-                <SafeAreaView style={style.container2}>
-                    <TouchableWithoutFeedback onPress={onShowPopup}>
-                        <Text style={{ fontSize: width * 0.045, color: 'white'}}> Canjear</Text>
-                    </TouchableWithoutFeedback>
-                </SafeAreaView>
-                <BottomRecompensa
-                    title='¡Felicitaciones!'
-                    estado='No iniciado'
-                    src={require('../assets/recompensa.jpeg')}
-                    ref={(target) => popupRef = target}
-                    onTouchOutside={onClosePopup}
-                    data={popupList}
+                <Button
+                    color={"#5FAFB9"}
+                    margin={'2%'}
+                    title="Canjear"
                 />
             </View>
 
@@ -293,13 +279,10 @@ const style = StyleSheet.create({
     boton: {
         marginLeft: '10%',
         marginRight: '10%',
-        height: width*0.1,
+        padding: 20,
         borderRadius: 10,
         marginBottom: '5%',
-        marginTop: '5%',
-        backgroundColor:"#5FAFB9",
-        alignItems:'center',
-        justifyContent: 'center'
+        marginTop: '5%'
     }
 
 });

@@ -19,8 +19,9 @@ import {
 //import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
-import { BottomRecompensa } from './BottomRecompensa'
+import { BottomPopup } from './BottomPopup'
 import { BottomNotification } from './BottomNotification'
+import Searchbar from './Searchbar.js'
 
 
 const popupList = [
@@ -46,7 +47,14 @@ if (PixelRatio.get() <= 2) {
     FONT_BACK_LABEL = 14;
 }
 
-export const Home = () => {
+export const Recompensas = () => {
+
+    const [value, setValue] = useState()
+    function updateSearch(value) {
+        //do your search logic or anything
+        console.log(value)
+    }
+
 
 
     let popupRef7 = React.createRef()
@@ -59,14 +67,6 @@ export const Home = () => {
 
 
 
-
-    let popupRef = React.createRef()
-    const onShowPopup = () => {
-        popupRef.show()
-    }
-    const onClosePopup = () => {
-        popupRef.close()
-    }
 
 
     return (
@@ -117,34 +117,68 @@ export const Home = () => {
 
                 </View>
             </View>
-            <Text style={{ fontSize: width * 0.055, marginTop: '6%', marginLeft: '5%', fontWeight: "bold" }}> Adiestramiento Canino</Text>
+            <Text style={{ fontSize: width * 0.065, margin: '2%', fontWeight: "bold" }}> Recompensas</Text>
+            <View style={style.buscador}>
 
-            <View style={style.iconCaracte4}>
-                <Image style={style.imgIcon2v}
-
-                    source={require('../assets/recompensa.jpeg')}
+                <Searchbar
+                    value={value}
+                    updateSearch={updateSearch}
                 />
             </View>
-            <Text style={{ fontSize: width * 0.045, marginLeft: '5%', fontWeight: "bold", margin: '3%' }}> ¿Qué incluye?</Text>
-            <Text style={{ fontSize: width * 0.035, marginLeft: '5%', fontWeight: "bold", color: 'grey', margin: '1%', width: width * 0.9 }}>
-                Curso de módulo 1 de “Adiestramiento Canino” donde aprenderás los principios básicos para adiestrar a tu perro.
-            </Text>
+            <ScrollView style={style.scrollStyle} >
+                <View style={style.fondo6}>
 
-            <View style={style.boton}>
-                <SafeAreaView style={style.container2}>
-                    <TouchableWithoutFeedback onPress={onShowPopup}>
-                        <Text style={{ fontSize: width * 0.045, color: 'white'}}> Canjear</Text>
-                    </TouchableWithoutFeedback>
-                </SafeAreaView>
-                <BottomRecompensa
-                    title='¡Felicitaciones!'
-                    estado='No iniciado'
-                    src={require('../assets/recompensa.jpeg')}
-                    ref={(target) => popupRef = target}
-                    onTouchOutside={onClosePopup}
-                    data={popupList}
-                />
-            </View>
+
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2v}
+
+                                    source={require('../assets/recompensa.jpeg')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.036 }}> Adiestramiento Canino</Text>
+                                <Text style={{ fontSize: width * 0.03 }}> Curso para perros</Text>
+                                <Text style={{ fontSize: width * 0.03 }}> Precio: $30</Text>
+                                <Text style={{ fontSize: width * 0.03, color: '#74c2d1' }}> Descuento: 100%</Text>
+                            </View>
+                            <View style={style.iconCaracte5v}>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.05 }}>100</Text>
+                                <Text style={{ fontSize: width * 0.03 }}> pts</Text>
+                            </View>
+                        </View>
+
+                    </View>
+                </View>
+
+                <View style={style.fondo6}>
+
+
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2v}
+
+                                    source={require('../assets/recompensa.jpeg')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.035 }}> Adiestramiento Canino</Text>
+                                <Text style={{ fontSize: width * 0.03 }}> Curso para perros</Text>
+                                <Text style={{ fontSize: width * 0.03 }}> Precio: $30</Text>
+                                <Text style={{ fontSize: width * 0.03, color: '#74c2d1' }}> Descuento: 100%</Text>
+                            </View>
+                            <View style={style.iconCaracte5v}>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.05 }}>100</Text>
+                                <Text style={{ fontSize: width * 0.03 }}> pts</Text>
+                            </View>
+                        </View>
+
+                    </View>
+                </View>
+
+            </ScrollView>
 
         </View>
 
@@ -260,20 +294,17 @@ const style = StyleSheet.create({
         resizeMode: 'stretch'
     },
     iconCaracte4: {
-        width: width * 0.8,
-        height: width * 0.8,
-        alignSelf: 'center',
+        width: width * 0.15,
         //alignItems: 'center',
         //justifyContent: 'center',
         top: '5%',
-        marginBottom: '10%'
     },
     imgIcon2v: {
 
-        height: width * 0.8,
-        width: width * 0.8,
+        height: width * 0.15,
+        width: width * 0.15,
         resizeMode: 'stretch',
-        borderRadius: 50
+        borderRadius: 10
     },
     fondo6: {
         position: 'relative',
@@ -290,17 +321,15 @@ const style = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: '1%'
     },
-    boton: {
-        marginLeft: '10%',
-        marginRight: '10%',
-        height: width*0.1,
+    buscador: {
+        backgroundColor: '#f5f5f5',
+        alignSelf: 'center',
+        margin: '2%',
+        width: width * 0.9,
+        height: width * 0.12,
         borderRadius: 10,
-        marginBottom: '5%',
-        marginTop: '5%',
-        backgroundColor:"#5FAFB9",
-        alignItems:'center',
-        justifyContent: 'center'
+        borderColor: 'grey',
+        paddingTop:'3%'
     }
 
 });
-

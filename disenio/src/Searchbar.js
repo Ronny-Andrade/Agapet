@@ -93,14 +93,14 @@ const styles = StyleSheet.create({
     },
     searchContainer:
     {
-        backgroundColor: 'white',
+        backgroundColor: '#f5f5f5',
         //width: '90%',
         //height: 40,
         flexDirection: 'row'
     },
     container: {
-        height: 80,
-        alignItems: 'center',
+        //height: 80,
+        //alignItems: 'center',
         // height: '100%', width: '100%' 
     },
 });
