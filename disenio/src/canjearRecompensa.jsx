@@ -19,7 +19,7 @@ import {
 //import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; import { Buttonfloat } from './buttonfloat';
 import { StackScreenProps } from '@react-navigation/stack';
-import { BottomPopup } from './BottomPopup'
+import { BottomRecompensa } from './BottomRecompensa'
 import { BottomNotification } from './BottomNotification'
 import Searchbar from './Searchbar.js'
 
@@ -95,7 +95,6 @@ export const CanjearRecompensa = () => {
 
                                         source={require('../assets/notificacion.png')}
                                     />
-
                                 </TouchableWithoutFeedback>
                             </SafeAreaView>
                             <BottomNotification
@@ -105,7 +104,6 @@ export const CanjearRecompensa = () => {
                                 onTouchOutside={onClosePopup7}
                                 data={popupList}
                             />
-
                         </View>
                     </View>
 

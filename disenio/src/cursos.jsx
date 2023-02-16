@@ -22,7 +22,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { BottomPopup } from './BottomPopup'
 import { BottomNotification } from './BottomNotification'
 import Searchbar from './Searchbar.js'
-import YoutubePlayer from 'react-native-youtube-iframe'
 
 
 const popupList = [
@@ -48,7 +47,14 @@ if (PixelRatio.get() <= 2) {
     FONT_BACK_LABEL = 14;
 }
 
-export const Home = () =>  {
+export const Cursos = () => {
+
+    const [value, setValue] = useState()
+    function updateSearch(value) {
+        //do your search logic or anything
+        console.log(value)
+    }
+
 
 
     let popupRef7 = React.createRef()
@@ -58,7 +64,6 @@ export const Home = () =>  {
     const onClosePopup7 = () => {
         popupRef7.close()
     }
-
 
 
 
@@ -112,87 +117,106 @@ export const Home = () =>  {
 
                 </View>
             </View>
-            <Text style={{ fontSize: width * 0.055, marginTop: '6%', marginLeft: '5%', fontWeight: "bold" }}> Convivencia entre mascotas</Text>
+            <Text style={{ fontSize: width * 0.065, margin: '2%', fontWeight: "bold" }}> Cursos</Text>
+            <View style={style.buscador}>
 
-           
-
-            <View style={style.iconCaracte4}>
-                <YoutubePlayer
-                play={true}
-                width={width*0.9 }
-                height={height*0.3}
-                videoId={'ddbHr5fQdHs'} 
+                <Searchbar
+                    value={value}
+                    updateSearch={updateSearch}
                 />
             </View>
-            <View style={{ flexDirection: 'row', width: width, marginTop: '2%' }}>
-                <View style={{ backgroundColor: '#f5f5f5', marginLeft: '5%', borderRadius: 15, justifyContent: 'center', width: width * 0.25 }} >
-                    <View style={{ flexDirection: 'row', marginBottom: '1%' }}>
-                        <Image style={style.imgIcon2v1}
+            <ScrollView style={style.scrollStyle} >
+                <View style={style.fondo6}>
 
-                            source={require('../assets/icons8-clock-384.png')}
-                        />
-                        <Text style={{ fontSize: width * 0.03 }}>
-                            4 mins
-                        </Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', marginTop: '1%' }}>
-                        <Image style={style.imgIcon2v1}
 
-                            source={require('../assets/coin.png')}
-                        />
-                        <Text style={{ fontSize: width * 0.03 }}>
-                            2 puntos
-                        </Text>
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2v}
+
+                                    source={require('../assets/recompensa.jpeg')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.036 }}> Convivencia entre mascotas</Text>
+                                <View style={{ flexDirection: 'row', marginTop: '1%', marginBottom: '1%' }}>
+                                    <Image style={style.imgIcon2v1}
+
+                                        source={require('../assets/icons8-clock-384.png')}
+                                    />
+                                    <Text style={{ fontSize: width * 0.03, width: '50%' }}>
+                                        4 mins
+                                    </Text>
+                                    <Image style={style.imgIcon2v1}
+
+                                        source={require('../assets/coin.png')}
+                                    />
+                                    <Text style={{ fontSize: width * 0.03 }}>
+                                        2 puntos
+                                    </Text>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03 }}>
+                                    ¿Como lograr que tu nuevo perro y tu antiguo gato se lleven bien?
+                                </Text>
+                                <View style={{ backgroundColor: '#f5f5f5', width: '100%', borderRadius: 10, height: width * 0.04, marginTop:'3%'}}>
+                                    <View style={{ backgroundColor: '#5FAFB9', width: '50%', borderRadius: 10, height: width * 0.04, alignItems:'flex-end' }}>
+                                    <Text style={{ color:'white', marginRight:'5%',justifyContent:'space-between', fontSize:width*0.025}}>
+                                    50%
+                                    </Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
                     </View>
                 </View>
-                <View style={{ width: width * 0.6 }} >
-                    <Text style={{ fontSize: width * 0.035, marginLeft: '5%', fontWeight: "bold", margin: '1%' }}> Descripción</Text>
-                    <Text style={{ fontSize: width * 0.03, marginLeft: '5%', fontWeight: "bold", color: 'grey', margin: '1%' }}>
-                        ¿Como lograr que tu nuevo perro y tu antiguo gato se lleven bien?
-                    </Text>
+
+                <View style={style.fondo6}>
+
+
+                    <View style={style.contenedorCaract}>
+                        <View style={style.caracte}>
+                            <View style={style.iconCaracte4}>
+                                <Image style={style.imgIcon2v}
+
+                                    source={require('../assets/recompensa.jpeg')}
+                                />
+                            </View>
+                            <View style={style.iconCaracte5}>
+                                <Text style={{ fontWeight: "bold", fontSize: width * 0.036 }}> Convivencia entre mascotas</Text>
+                                <View style={{ flexDirection: 'row', marginTop: '1%', marginBottom: '1%' }}>
+                                    <Image style={style.imgIcon2v1}
+
+                                        source={require('../assets/icons8-clock-384.png')}
+                                    />
+                                    <Text style={{ fontSize: width * 0.03, width: '50%' }}>
+                                        4 mins
+                                    </Text>
+                                    <Image style={style.imgIcon2v1}
+
+                                        source={require('../assets/coin.png')}
+                                    />
+                                    <Text style={{ fontSize: width * 0.03 }}>
+                                        2 puntos
+                                    </Text>
+                                </View>
+                                <Text style={{ fontSize: width * 0.03 }}>
+                                    ¿Como lograr que tu nuevo perro y tu antiguo gato se lleven bien?
+                                </Text>
+                                <View style={{ backgroundColor: '#f5f5f5', width: '100%', borderRadius: 10, height: width * 0.04, marginTop:'3%'}}>
+                                    <View style={{ backgroundColor: '#5FAFB9', width: '30%', borderRadius: 10, height: width * 0.04, alignItems:'flex-end' }}>
+                                    <Text style={{ color:'white', marginRight:'5%',justifyContent:'space-between', fontSize:width*0.025}}>
+                                    30%
+                                    </Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
+                    </View>
                 </View>
-            </View>
 
-            <Text style={{ fontSize: width * 0.045, marginLeft: '5%', fontWeight: "bold", margin: '1%', marginTop: '4%', marginBottom: '4%' }}> Temas</Text>
-
-            <View style={style.tablatemas}>
-                <Image style={style.imgIcon2v1v}
-
-                    source={require('../assets/icons8-play-button-circled-90.png')}
-                />
-                <Text style={{ fontSize: width * 0.035, width:'50%'}}>
-                    Antes de la llegada
-                </Text>
-                <Text style={{ fontSize: width * 0.035, fontWeight:'bold', width:'15%' }}>
-                    2:30
-                </Text>
-                <Text style={{ fontSize: width * 0.035, color: '#74c2d1',fontWeight:'bold' }}> 100%</Text>
-
-            </View>
-
-            <View style={style.tablatemas}>
-                <Image style={style.imgIcon2v1v}
-
-                    source={require('../assets/icons8-play-button-circled-90.png')}
-                />
-                <Text style={{ fontSize: width * 0.035, width:'50%'}}>
-                    El recibimiento.
-                </Text>
-                <Text style={{ fontSize: width * 0.035, fontWeight:'bold', width:'15%' }}>
-                    2:30
-                </Text>
-                <Text style={{ fontSize: width * 0.035, color: '#74c2d1',fontWeight:'bold' }}> 0%</Text>
-
-            </View>
-
-
-            <View style={style.boton}>
-                <Button
-                    color={"#5FAFB9"}
-                    margin={'2%'}
-                    title="Ganar Puntos"
-                />
-            </View>
+            </ScrollView>
 
         </View>
 
@@ -296,7 +320,7 @@ const style = StyleSheet.create({
 
     },
     iconCaracte5v: {
-        //height: width,
+        width: '100%',
         marginTop: '6%',
         alignItems: 'center',
         //marginLeft: '2%'
@@ -308,22 +332,29 @@ const style = StyleSheet.create({
         resizeMode: 'stretch'
     },
     iconCaracte4: {
-
-        alignItems: 'center',
+        width: width * 0.25,
+        //alignItems: 'center',
         //justifyContent: 'center',
-        top: '3%'
+        top: '3%',
     },
     imgIcon2v: {
 
-        height: width * 0.8,
-        width: width * 0.8,
+        height: width * 0.25,
+        width: width * 0.25,
         resizeMode: 'stretch',
-        borderRadius: 50
+        borderRadius: 10
+    },
+    imgIcon2v1: {
+
+        height: width * 0.05,
+        width: width * 0.05,
+        resizeMode: 'stretch',
+        marginRight: '3%'
     },
     fondo6: {
         position: 'relative',
         width: width * 0.9,
-        height: height * 0.12,
+        height: height * 0.16,
         elevation: 5,
         marginTop: '5%',
         backgroundColor: 'white',
@@ -335,38 +366,15 @@ const style = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: '1%'
     },
-    boton: {
-        marginLeft: '10%',
-        marginRight: '10%',
-        padding: 20,
-        borderRadius: 10,
-        marginBottom: '5%',
-        marginTop: '5%'
-    },
-    imgIcon2v1: {
-        marginLeft: '7%',
-        height: width * 0.055,
-        width: width * 0.055,
-        resizeMode: 'stretch',
-        marginRight: '3%'
-    },
-    tablatemas: {
-        flexDirection: 'row',
-        borderRadius: 10,
-        borderWidth: 0.4,
-        width: width * 0.85,
+    buscador: {
+        backgroundColor: '#f5f5f5',
         alignSelf: 'center',
+        margin: '2%',
+        width: width * 0.9,
+        height: width * 0.12,
+        borderRadius: 10,
         borderColor: 'grey',
-        height: height * 0.045,
-        alignItems:'center',
-        margin:'2%'
-    },
-    imgIcon2v1v: {
-        marginLeft: '7%',
-        height: width * 0.07,
-        width: width * 0.07,
-        resizeMode: 'stretch',
-        marginRight: '3%'
+        paddingTop: '3%'
     }
 
 });
